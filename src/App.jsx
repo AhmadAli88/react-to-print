@@ -1,20 +1,24 @@
-import { useRef } from 'react';
-import ReactToPrint from 'react-to-print';  // Correct default import for v3.0.2
+import TablePrintExample from './components/Advanced Example';
+import Test from './components/Basic';
+import ConditionalPrintExample from './components/Conditional Printing Based on State';
+import SectionPrintExample from './components/Print a Specific Section of the Page';
+import MultipleComponentsPrint from './components/Print Multiple Components';
+import StyledPrintExample from './components/Print Styled Content';
+import HeaderFooterPrintExample from './components/Print with Custom Headers and Footers';
 
-const App = () => {
-  const componentRef = useRef();
-
+function App() {
   return (
     <div>
-      <div ref={componentRef}>
-        This contains all the files you intend to export[download]
-      </div>
-      <ReactToPrint
-        trigger={() => <button>Print this out!</button>}
-        content={() => componentRef.current}
-      />
+      <Test />
+      <SectionPrintExample/>
+      <StyledPrintExample/>
+      <TablePrintExample/>
+      <HeaderFooterPrintExample/>
+      <ConditionalPrintExample/>
+      <MultipleComponentsPrint/>
+      <MultipleComponentsPrint/>
     </div>
   );
-};
+}
 
 export default App;
